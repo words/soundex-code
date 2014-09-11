@@ -1,0 +1,13 @@
+language: node_js
+script: npm run-script test-travis
+node_js:
+- '0.10'
+- '0.11'
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: tituswormer@gmail.com
+  api_key:
+    secure: WJI5YJLZtJSOMpw3rtbC5Kih+pBVFCBRhHSBlUDi7G1Hx2TMCj1bhImCV/J80bahYviVX+pDdHkMBV9myAPTfhY9Soq5/R1cDU9ToMDZaRXJvli7ZQ5+m/mrbihDvvwq2d97SRMObm2BStmlSyiQ4CzXAx6mYihiKrLz7nRHiRY=
+  on:
+    repo: wooorm/soundex-code

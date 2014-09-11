@@ -1,0 +1,27 @@
+{
+  "name": "soundex-code",
+  "main": "index.js",
+  "description": "A fast implementation of the Soundex algorithm",
+  "license": "MIT",
+  "keywords": [
+    "phonetics",
+    "soundex"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/soundex-code.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "component.json",
+    "package.json",
+    "coverage",
+    "node_modules",
+    "spec"
+  ]
+}

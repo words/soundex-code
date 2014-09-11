@@ -1,0 +1,14 @@
+{
+  "name": "soundex-code",
+  "version": "0.0.1",
+  "description": "A fast implementation of the Soundex algorithm",
+  "license": "MIT",
+  "keywords": [
+    "phonetics",
+    "soundex"
+  ],
+  "scripts" : [
+    "index.js"
+  ],
+  "repository": "wooorm/soundex-code"
+}
