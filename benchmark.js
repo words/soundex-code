@@ -4,7 +4,7 @@
 
 var soundexCode, source, natural, soundex, cljFuzzy, soundexEncode;
 
-soundexCode = require('..');
+soundexCode = require('./');
 
 try {
     natural = require('natural').SoundEx;
