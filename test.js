@@ -2,7 +2,7 @@
 
 var soundexCode, assert;
 
-soundexCode = require('..');
+soundexCode = require('./');
 assert = require('assert');
 
 describe('soundexCode()', function () {

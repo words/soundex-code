@@ -20,14 +20,14 @@
     "url": "https://github.com/wooorm/soundex-code.git"
   },
   "scripts": {
-    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/soundex-code.spec.js",
-    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/soundex-code.spec.js",
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports test.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports test.js",
     "lint": "npm run lint-api && npm run lint-test && npm run lint-benchmark && npm run lint-style",
     "lint-api": "node_modules/.bin/eslint index.js --env node --env browser --rule 'quotes: [2, single], no-cond-assign: false'",
-    "lint-test": "node_modules/.bin/eslint spec/soundex-code.spec.js --env node --env mocha --rule 'quotes: [2, single], no-loop-func: false'",
+    "lint-test": "node_modules/.bin/eslint test.js --env node --env mocha --rule 'quotes: [2, single], no-loop-func: false'",
     "lint-benchmark": "node_modules/.bin/eslint benchmark.js --env node --global suite,set,bench --rule 'quotes: [2, single]'",
-    "lint-style": "node_modules/.bin/jscs index.js spec/soundex-code.spec.js benchmark.js --reporter=inline",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/soundex-code.spec.js",
+    "lint-style": "node_modules/.bin/jscs index.js test.js benchmark.js --reporter=inline",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- test.js",
     "install-benchmark": "npm install natural clj-fuzzy soundex soundex-encode",
     "benchmark": "node_modules/.bin/matcha benchmark.js",
     "make": "npm run lint && npm run coverage"
