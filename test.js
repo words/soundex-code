@@ -1,9 +1,18 @@
 'use strict';
 
-var soundexCode, assert;
+/**
+ * Dependencies.
+ */
+
+var soundexCode,
+    assert;
 
 soundexCode = require('./');
 assert = require('assert');
+
+/**
+ * Tests.
+ */
 
 describe('soundexCode()', function () {
     it('should be of type `function`', function () {
@@ -11,7 +20,10 @@ describe('soundexCode()', function () {
     });
 
     it('should be case insensitive', function () {
-        var result = soundexCode('phonetics');
+        var result;
+
+        result = soundexCode('phonetics');
+
         assert(soundexCode('PHONETICS') === result);
         assert(soundexCode('PhoNeTicS') === result);
     });
@@ -48,7 +60,8 @@ describe('soundexCode()', function () {
      */
 
     it('should be compatible with (Node) Natural', function () {
-        var attribute, tests;
+        var attribute,
+            tests;
 
         tests = {
             'blackberry' : 'B421',
@@ -69,7 +82,8 @@ describe('soundexCode()', function () {
      */
 
     it('should be compatible with (PHP) soundex', function () {
-        var attribute, tests;
+        var attribute,
+            tests;
 
         tests = {
             'Euler' : 'E460',
@@ -97,7 +111,8 @@ describe('soundexCode()', function () {
      */
 
     it('should be compatible with National Archives', function () {
-        var attribute, tests;
+        var attribute,
+            tests;
 
         tests = {
             'Washington' : 'W252',
