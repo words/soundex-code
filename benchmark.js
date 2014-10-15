@@ -1,18 +1,49 @@
 'use strict';
 
-/* eslint-disable no-cond-assign */
+/**
+ * Dependencies.
+ */
 
-var soundexCode, source, natural, soundex, cljFuzzy, soundexEncode;
+var soundexCode;
 
 soundexCode = require('./');
 
+/**
+ * Optional dependencies.
+ */
+
+var exception,
+    natural,
+    soundex,
+    cljFuzzy,
+    soundexEncode;
+
 try {
     natural = require('natural').SoundEx;
+} catch (err) {
+    exception = err;
+}
+
+try {
     cljFuzzy = require('clj-fuzzy').phonetics.soundex;
+} catch (err) {
+    exception = err;
+}
+
+try {
     soundex = require('soundex');
+} catch (err) {
+    exception = err;
+}
+
+try {
     soundexEncode = require('soundex-encode');
-} catch (error) {
-    throw new Error(
+} catch (err) {
+    exception = err;
+}
+
+if (exception) {
+    console.log(
         '\u001B[0;31m' +
         'The libraries needed by this benchmark could not be found. ' +
         'Please execute:\n' +
@@ -21,8 +52,14 @@ try {
     );
 }
 
-/* The first 1000 words from Letterpress: https://github.com/atebits/Words */
-source = [
+/**
+ * The first 1000 words from Letterpress:
+ *   https://github.com/atebits/Words
+ */
+
+var words;
+
+words = [
     'aa',
     'aah',
     'aahed',
@@ -1025,43 +1062,64 @@ source = [
     'acaulescent'
 ];
 
-function findPhonetics(method) {
-    var iterator = -1,
-        value;
+/**
+ * Iterate over all words.
+ *
+ * @param {function(string)} method
+ */
 
-    while (value = source[++iterator]) {
-        method(value);
-    }
+function forEachWords(method) {
+    words.forEach(method);
 }
+
+/**
+ * Benchmark this module.
+ */
 
 suite('soundexCode — this module', function () {
     bench('op/s * 1,000', function () {
-        findPhonetics(soundexCode);
+        forEachWords(soundexCode);
     });
 });
+
+/**
+ * Benchmark natural.
+ */
 
 suite('natural', function () {
     var process = natural.process.bind(natural);
 
     bench('op/s * 1,000', function () {
-        findPhonetics(process);
+        forEachWords(process);
     });
 });
+
+/**
+ * Benchmark soundex-encode.
+ */
 
 suite('soundex-encode', function () {
     bench('op/s * 1,000', function () {
-        findPhonetics(soundexEncode);
+        forEachWords(soundexEncode);
     });
 });
+
+/**
+ * Benchmark soundex.
+ */
 
 suite('soundex', function () {
     bench('op/s * 1,000', function () {
-        findPhonetics(soundex);
+        forEachWords(soundex);
     });
 });
 
+/**
+ * Benchmark clj-fuzzy.
+ */
+
 suite('clj-fuzzy', function () {
     bench('op/s * 1,000', function () {
-        findPhonetics(cljFuzzy);
+        forEachWords(cljFuzzy);
     });
 });

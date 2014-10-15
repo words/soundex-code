@@ -46,30 +46,23 @@ soundexCode("A", 6); // "A000"
 
 ## Benchmark
 
-Run the benchmark yourself:
-
-```sh
-$ npm run install-benchmark # Just once of course.
-$ npm run benchmark
-```
-
 On a MacBook Air, it runs about 516,000 op/s.
 
 ```
            soundexCode — this module
-  516 op/s » op/s * 1,000
+  410 op/s » op/s * 1,000
 
            natural
-  177 op/s » op/s * 1,000
+  182 op/s » op/s * 1,000
 
            soundex-encode
-   52 op/s » op/s * 1,000
+   45 op/s » op/s * 1,000
 
            soundex
    30 op/s » op/s * 1,000
 
            clj-fuzzy
-   21 op/s » op/s * 1,000
+   20 op/s » op/s * 1,000
 ```
 
 ## Related
