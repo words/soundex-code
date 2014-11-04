@@ -64,11 +64,11 @@ describe('soundexCode()', function () {
             tests;
 
         tests = {
-            'blackberry' : 'B421',
-            'calculate' : 'C424',
-            'fox' : 'F200',
-            'jump' : 'J510',
-            'phonetics' : 'P532'
+            'blackberry': 'B421',
+            'calculate': 'C424',
+            'fox': 'F200',
+            'jump': 'J510',
+            'phonetics': 'P532'
         };
 
         for (attribute in tests) {
@@ -86,18 +86,18 @@ describe('soundexCode()', function () {
             tests;
 
         tests = {
-            'Euler' : 'E460',
-            'Gauss' : 'G200',
-            'Hilbert' : 'H416',
-            'Knuth' : 'K530',
-            'Lloyd' : 'L300',
-            'Lukasiewicz' : 'L222',
-            'Ellery' : 'E460',
-            'Ghosh' : 'G200',
-            'Heilbronn' : 'H416',
-            'Kant' : 'K530',
-            'Ladd' : 'L300',
-            'Lissajous' : 'L222'
+            'Euler': 'E460',
+            'Gauss': 'G200',
+            'Hilbert': 'H416',
+            'Knuth': 'K530',
+            'Lloyd': 'L300',
+            'Lukasiewicz': 'L222',
+            'Ellery': 'E460',
+            'Ghosh': 'G200',
+            'Heilbronn': 'H416',
+            'Kant': 'K530',
+            'Ladd': 'L300',
+            'Lissajous': 'L222'
         };
 
         for (attribute in tests) {
@@ -115,15 +115,15 @@ describe('soundexCode()', function () {
             tests;
 
         tests = {
-            'Washington' : 'W252',
-            'Lee' : 'L000',
-            'Gutierrez' : 'G362',
-            'Pfister' : 'P236',
-            'Jackson' : 'J250',
-            'Tymczak' : 'T522',
-            'VanDeusen' : 'V532',
-            'Deusen' : 'D250',
-            'Ashcraft' : 'A261'
+            'Washington': 'W252',
+            'Lee': 'L000',
+            'Gutierrez': 'G362',
+            'Pfister': 'P236',
+            'Jackson': 'J250',
+            'Tymczak': 'T522',
+            'VanDeusen': 'V532',
+            'Deusen': 'D250',
+            'Ashcraft': 'A261'
         };
 
         for (attribute in tests) {
