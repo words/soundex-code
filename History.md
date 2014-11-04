@@ -1,4 +1,19 @@
 
+n.n.n / 2014-11-04
+==================
+
+ * Add flat badges to `Readme.md`
+ * Refactor npm script target order in `package.json`
+ * Refactor benchmark
+ * Remove clj-fuzzy from benchmark and competition
+ * Update module keywords
+ * Update module description
+ * Refactor property order in `package.json`, `component.json`
+ * Add `.eslintrc`
+ * Refactor `.jscs.json`
+ * Refactor to disallow space after object keys
+ * Update eslint, mocha
+
 0.0.2 / 2014-10-15
 ==================
 
