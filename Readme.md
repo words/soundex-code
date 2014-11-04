@@ -1,4 +1,4 @@
-# soundex-code [![Build Status](https://travis-ci.org/wooorm/soundex-code.svg?branch=master)](https://travis-ci.org/wooorm/soundex-code) [![Coverage Status](https://img.shields.io/coveralls/wooorm/soundex-code.svg)](https://coveralls.io/r/wooorm/soundex-code?branch=master)
+# soundex-code [![Build Status](https://img.shields.io/travis/wooorm/soundex-code.svg?style=flat)](https://travis-ci.org/wooorm/soundex-code) [![Coverage Status](https://img.shields.io/coveralls/wooorm/soundex-code.svg?style=flat)](https://coveralls.io/r/wooorm/soundex-code?branch=master)
 
 Fast [Soundex](http://en.wikipedia.org/wiki/Soundex) implementation. No cruft. Real fast.
 
