@@ -1,6 +1,6 @@
 # soundex-code [![Build Status](https://travis-ci.org/wooorm/soundex-code.svg?branch=master)](https://travis-ci.org/wooorm/soundex-code) [![Coverage Status](https://img.shields.io/coveralls/wooorm/soundex-code.svg)](https://coveralls.io/r/wooorm/soundex-code?branch=master)
 
-The [Soundex](http://en.wikipedia.org/wiki/Soundex) algorithm in JavaScript. No cruft. Real fast.
+Fast [Soundex](http://en.wikipedia.org/wiki/Soundex) implementation. No cruft. Real fast.
 
 Soundex is one of the earlier phonetics algorithms, specifically designed for surnames, inspiring others such as [metaphone](https://github.com/wooorm/metaphone).
 

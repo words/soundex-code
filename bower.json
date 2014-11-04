@@ -1,7 +1,7 @@
 {
   "name": "soundex-code",
   "main": "index.js",
-  "description": "A fast implementation of the Soundex algorithm",
+  "description": "Fast Soundex implementation",
   "license": "MIT",
   "keywords": [
     "phonetics",
