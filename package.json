@@ -4,6 +4,8 @@
   "description": "Fast Soundex implementation",
   "license": "MIT",
   "keywords": [
+    "natural",
+    "language",
     "phonetics",
     "soundex"
   ],
