@@ -15,17 +15,10 @@ soundexCode = require('./');
 var exception,
     natural,
     soundex,
-    cljFuzzy,
     soundexEncode;
 
 try {
     natural = require('natural').SoundEx;
-} catch (err) {
-    exception = err;
-}
-
-try {
-    cljFuzzy = require('clj-fuzzy').phonetics.soundex;
 } catch (err) {
     exception = err;
 }
@@ -1111,15 +1104,5 @@ suite('soundex-encode', function () {
 suite('soundex', function () {
     bench('op/s * 1,000', function () {
         forEachWords(soundex);
-    });
-});
-
-/**
- * Benchmark clj-fuzzy.
- */
-
-suite('clj-fuzzy', function () {
-    bench('op/s * 1,000', function () {
-        forEachWords(cljFuzzy);
     });
 });

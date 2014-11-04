@@ -39,10 +39,9 @@ soundexCode("A", 6); // "A000"
 
 ## Other Soundex implementations
 
-- [NaturalNode/natural](https://github.com/NaturalNode/natural);
-- [LouisT/node-soundex](https://github.com/LouisT/node-soundex);
-- [derrickpelletier/soundex-encode](https://github.com/derrickpelletier/soundex-encode);
-- [Yomguithereal/clj-fuzzy](https://github.com/Yomguithereal/clj-fuzzy).
+- [NaturalNode/natural](https://github.com/NaturalNode/natural)
+- [LouisT/node-soundex](https://github.com/LouisT/node-soundex)
+- [derrickpelletier/soundex-encode](https://github.com/derrickpelletier/soundex-encode)
 
 ## Benchmark
 
@@ -60,9 +59,6 @@ On a MacBook Air, it runs about 516,000 op/s.
 
            soundex
    30 op/s » op/s * 1,000
-
-           clj-fuzzy
-   20 op/s » op/s * 1,000
 ```
 
 ## Related
