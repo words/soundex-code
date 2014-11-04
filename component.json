@@ -7,8 +7,8 @@
     "phonetics",
     "soundex"
   ],
+  "repository": "wooorm/soundex-code",
   "scripts" : [
     "index.js"
-  ],
-  "repository": "wooorm/soundex-code"
+  ]
 }
