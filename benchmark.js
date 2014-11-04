@@ -12,30 +12,30 @@ soundexCode = require('./');
  * Optional dependencies.
  */
 
-var exception,
-    natural,
+var natural,
     soundex,
-    soundexEncode;
+    soundexEncode,
+    hasException;
 
 try {
     natural = require('natural').SoundEx;
 } catch (err) {
-    exception = err;
+    hasException = true;
 }
 
 try {
     soundex = require('soundex');
 } catch (err) {
-    exception = err;
+    hasException = true;
 }
 
 try {
     soundexEncode = require('soundex-encode');
 } catch (err) {
-    exception = err;
+    hasException = true;
 }
 
-if (exception) {
+if (hasException) {
     console.log(
         '\u001B[0;31m' +
         'The libraries needed by this benchmark could not be found. ' +
@@ -50,9 +50,9 @@ if (exception) {
  *   https://github.com/atebits/Words
  */
 
-var words;
+var fixtures;
 
-words = [
+fixtures = [
     'aa',
     'aah',
     'aahed',
@@ -1056,13 +1056,13 @@ words = [
 ];
 
 /**
- * Iterate over all words.
+ * Iterate over all fixtures.
  *
  * @param {function(string)} method
  */
 
-function forEachWords(method) {
-    words.forEach(method);
+function eachFixture(method) {
+    fixtures.forEach(method);
 }
 
 /**
@@ -1071,7 +1071,7 @@ function forEachWords(method) {
 
 suite('soundexCode — this module', function () {
     bench('op/s * 1,000', function () {
-        forEachWords(soundexCode);
+        eachFixture(soundexCode);
     });
 });
 
@@ -1079,30 +1079,38 @@ suite('soundexCode — this module', function () {
  * Benchmark natural.
  */
 
-suite('natural', function () {
-    var process = natural.process.bind(natural);
+if (natural) {
+    suite('natural', function () {
+        var process;
 
-    bench('op/s * 1,000', function () {
-        forEachWords(process);
+        process = natural.process.bind(natural);
+
+        bench('op/s * 1,000', function () {
+            eachFixture(process);
+        });
     });
-});
+}
 
 /**
  * Benchmark soundex-encode.
  */
 
-suite('soundex-encode', function () {
-    bench('op/s * 1,000', function () {
-        forEachWords(soundexEncode);
+if (soundexEncode) {
+    suite('soundex-encode', function () {
+        bench('op/s * 1,000', function () {
+            eachFixture(soundexEncode);
+        });
     });
-});
+}
 
 /**
  * Benchmark soundex.
  */
 
-suite('soundex', function () {
-    bench('op/s * 1,000', function () {
-        forEachWords(soundex);
+if (soundex) {
+    suite('soundex', function () {
+        bench('op/s * 1,000', function () {
+            eachFixture(soundex);
+        });
     });
-});
+}
