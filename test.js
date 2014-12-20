@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/*
  * Dependencies.
  */
 
@@ -10,7 +10,7 @@ var soundexCode,
 soundexCode = require('./');
 assert = require('assert');
 
-/**
+/*
  * Tests.
  */
 
@@ -54,7 +54,7 @@ describe('soundexCode()', function () {
         assert(soundexCode('bcdlmrf', 6) === 'B23456');
     });
 
-    /**
+    /*
      * Natural provides several unit tests. See:
      *   https://github.com/NaturalNode/natural
      */
@@ -76,7 +76,7 @@ describe('soundexCode()', function () {
         }
     });
 
-    /**
+    /*
      * The PHP implementation, based on Knuths, gives several examples. See:
      *   http://php.net/manual/en/function.soundex.php
      */
@@ -105,7 +105,7 @@ describe('soundexCode()', function () {
         }
     });
 
-    /**
+    /*
      * The original implementation gives several examples. See:
      *   http://www.archives.gov/research/census/soundex.html
      */

@@ -3,13 +3,13 @@
 var DEFAULT_LENGTH,
     map;
 
-/**
+/*
  * Define the minimum length of Soundex keys.
  */
 
 DEFAULT_LENGTH = 4;
 
-/**
+/*
  * Define the Soundex values belonging to characters.
  *
  * This map also includes vowels (with a value of 0) to easily distinguish
@@ -33,7 +33,6 @@ map.r = 6;
  * @param {string} value
  * @return {string}
  */
-
 function pad(value) {
     var length;
 
@@ -61,7 +60,6 @@ function pad(value) {
  * @param {number} maxLength
  * @return {string}
  */
-
 function soundexPhonetics(value, maxLength) {
     var length,
         index,
@@ -100,7 +98,7 @@ function soundexPhonetics(value, maxLength) {
     return pad(results.join('')).substr(0, maxLength || DEFAULT_LENGTH);
 }
 
-/**
+/*
  * Export `soundexPhonetics`.
  */
 

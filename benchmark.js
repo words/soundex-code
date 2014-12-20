@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/*
  * Dependencies.
  */
 
@@ -8,7 +8,7 @@ var soundexCode;
 
 soundexCode = require('./');
 
-/**
+/*
  * Optional dependencies.
  */
 
@@ -45,7 +45,7 @@ if (hasException) {
     );
 }
 
-/**
+/*
  * The first 1000 words from Letterpress:
  *   https://github.com/atebits/Words
  */
@@ -1060,12 +1060,11 @@ fixtures = [
  *
  * @param {function(string)} method
  */
-
 function eachFixture(method) {
     fixtures.forEach(method);
 }
 
-/**
+/*
  * Benchmark this module.
  */
 
@@ -1075,7 +1074,7 @@ suite('soundexCode — this module', function () {
     });
 });
 
-/**
+/*
  * Benchmark natural.
  */
 
@@ -1091,7 +1090,7 @@ if (natural) {
     });
 }
 
-/**
+/*
  * Benchmark soundex-encode.
  */
 
@@ -1103,7 +1102,7 @@ if (soundexEncode) {
     });
 }
 
-/**
+/*
  * Benchmark soundex.
  */
 
