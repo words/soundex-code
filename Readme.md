@@ -9,17 +9,17 @@ Depending on your goals, additionally use a stemmer (e.g., my own porter stemmer
 ## Installation
 
 npm:
-```sh
+```bash
 $ npm install soundex-code
 ```
 
 Component:
-```sh
+```bash
 $ component install wooorm/soundex-code
 ```
 
 Bower:
-```sh
+```bash
 $ bower install soundex-code
 ```
 
@@ -35,6 +35,35 @@ soundexCode("Smith") === soundex-code("Schmit"); // true
 
 soundexCode("Ashcraftersson", 6); // "A26136"
 soundexCode("A", 6); // "A000"
+```
+
+## CLI
+
+Install:
+```bash
+$ npm install --global soundex-code
+```
+
+Use:
+```
+Usage: soundex-code [options] words...
+
+Fast Soundex implementation
+
+Options:
+
+  -h, --help           output usage information
+  -v, --version        output version number
+
+Usage:
+
+# output phonetics for words
+$ soundex-code soundex unicorn
+# S532 U526
+
+# output phonetics for words from stdin
+$ echo "soundex unicorn banana" | soundex-code
+# S532 U526 B550
 ```
 
 ## Other Soundex implementations
