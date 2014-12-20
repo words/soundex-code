@@ -26,9 +26,10 @@
     "components/",
     "coverage/",
     "node_modules/",
-    "benchmark.js",
     "component.json",
     "package.json",
+    "benchmark.js",
+    "cli.js",
     "test.js"
   ]
 }

@@ -16,6 +16,9 @@
     "url": "https://github.com/wooorm/soundex-code.git"
   },
   "author": "Titus Wormer <tituswormer@gmail.com>",
+  "bin": {
+    "soundex-code": "cli.js"
+  },
   "devDependencies": {
     "eslint": "^0.10.0",
     "istanbul": "^0.3.0",
