@@ -66,12 +66,6 @@ $ echo "soundex unicorn banana" | soundex-code
 # S532 U526 B550
 ```
 
-## Other Soundex implementations
-
-- [NaturalNode/natural](https://github.com/NaturalNode/natural)
-- [LouisT/node-soundex](https://github.com/LouisT/node-soundex)
-- [derrickpelletier/soundex-encode](https://github.com/derrickpelletier/soundex-encode)
-
 ## Benchmark
 
 On a MacBook Air, it runs about 516,000 op/s.
