@@ -7,7 +7,9 @@
     "natural",
     "language",
     "phonetics",
-    "soundex"
+    "soundex",
+    "cli",
+    "bin"
   ],
   "repository": "wooorm/soundex-code",
   "scripts" : [

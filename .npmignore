@@ -1,12 +1,14 @@
 .*
 *.log
+*.sh
 build/
 bower_components/
 components/
 coverage/
 node_modules/
-test.js
 benchmark.js
+cli.js
+test.js
 bower.json
 component.json
 History.md

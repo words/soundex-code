@@ -7,13 +7,18 @@
     "natural",
     "language",
     "phonetics",
-    "soundex"
+    "soundex",
+    "cli",
+    "bin"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wooorm/soundex-code.git"
   },
   "author": "Titus Wormer <tituswormer@gmail.com>",
+  "bin": {
+    "soundex-code": "cli.js"
+  },
   "devDependencies": {
     "eslint": "^0.10.0",
     "istanbul": "^0.3.0",
@@ -24,13 +29,16 @@
   },
   "scripts": {
     "test": "_mocha --check-leaks test.js",
-    "test-travis": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
+    "test-cli": "bash test.sh",
+    "test-coveralls": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
+    "test-travis": "npm run test-cli && npm run test-coveralls",
     "coverage": "istanbul cover _mocha -- -- test.js",
     "lint-api": "eslint index.js",
-    "lint-test": "eslint --env mocha test.js",
+    "lint-cli": "eslint --rule no-process-exit:false cli.js",
     "lint-benchmark": "eslint --global suite,set,bench benchmark.js",
-    "lint-style": "jscs --reporter inline index.js test.js benchmark.js",
-    "lint": "npm run lint-api && npm run lint-test && npm run lint-benchmark && npm run lint-style",
+    "lint-test": "eslint --env mocha test.js",
+    "lint-style": "jscs --reporter inline index.js benchmark.js cli.js test.js",
+    "lint": "npm run lint-api && npm run lint-cli && npm run lint-benchmark && npm run lint-test && npm run lint-style",
     "make": "npm run lint && npm run coverage",
     "install-benchmark": "npm install natural soundex soundex-encode",
     "benchmark": "matcha benchmark.js"
