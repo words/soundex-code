@@ -1,4 +1,24 @@
 
+n.n.n / 2014-12-20
+==================
+
+  * Remove other implementations from `Readme.md`
+  * Merge branch 'feature/add-cli'
+  * Add CLI-useage to `Readme.md`
+  * Add `lint-cli` npm script target to `package.json`
+  * Add `test-cli` npm script target to `package.json`
+  * Add `test.sh`
+  * Add CLI
+  * Add `cli.js`
+  * Add `cli`, `bin` to package keywords
+  * Refactor to adhere to strict jsdoc style
+  * Add jscs-jsdoc configuration to `.jscs.json`
+  * Add jscs-jsdoc as a dev-dependency
+  * Refactor npm scripts for changes in npm
+  * Fix incorrect executive rights on `test.js`
+  * Update eslint
+  * Update matcha
+
 0.1.0 / 2014-11-04
 ==================
 
