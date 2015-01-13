@@ -37,6 +37,11 @@ it "Should accept multiple values over stdin"
     result=`echo "phonetics unicorns" | ./cli.js` 2> /dev/null
     assert "$result" "P532 U526"
 
+it "Should fail when no values are piped in and no values are given"
+    code=0
+    ./cli.js > /dev/null 2>&1 || code=$?
+    assert $code 1
+
 it "Should accept \`--help\`"
     code=0
     ./cli.js --help > /dev/null 2>&1 || code=$?
