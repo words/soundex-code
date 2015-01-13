@@ -12,6 +12,14 @@ soundex = require('./');
 pack = require('./package.json');
 
 /*
+ * Detect if a value is expected to be piped in.
+ */
+
+var expextPipeIn;
+
+expextPipeIn = !process.stdin.isTTY;
+
+/*
  * Arguments.
  */
 
@@ -31,20 +39,23 @@ command = Object.keys(pack.bin)[0];
  * Get the soundex of a list of words.
  *
  * @param {Array.<string>} values
+ * @return {string}
  */
-function getPhonetics(values) {
+function phonetics(values) {
     return values.map(function (value) {
         return soundex(value);
-    });
+    }).join(' ');
 }
 
 /**
  * Help.
+ *
+ * @return {string}
  */
 function help() {
     return [
         '',
-        'Usage: ' + command + ' [options] words...',
+        'Usage: ' + command + ' [options] <words...>',
         '',
         pack.description,
         '',
@@ -55,24 +66,25 @@ function help() {
         '',
         'Usage:',
         '',
-        '# output phonetics for words',
-        '$ ' + command + ' soundex unicorn',
-        '# ' + getPhonetics(['soundex', 'unicorn']).join(' '),
+        '# output phonetics',
+        '$ ' + command + ' phonetics unicorn',
+        '# ' + phonetics(['phonetics', 'unicorn']),
         '',
-        '# output phonetics for words from stdin',
-        '$ echo "soundex unicorn banana" | ' + command,
-        '# ' + getPhonetics(['soundex', 'unicorn', 'banana']).join(' ')
+        '# output phonetics from stdin',
+        '$ echo "phonetics banana" | ' + command,
+        '# ' + phonetics(['phonetics', 'banana']),
+        ''
     ].join('\n  ') + '\n';
 }
 
 /**
  * Get the phonetics of a list of words.
  *
- * @param {Array.<string>} values
+ * @param {string?} value
  */
-function getSoundex(values) {
-    if (values.length) {
-        console.log(getPhonetics(values).join(' '));
+function getSoundex(value) {
+    if (value) {
+        console.log(phonetics(value.split(/\s+/g)));
     } else {
         process.stderr.write(help());
         process.exit(1);
@@ -93,12 +105,14 @@ if (
     argv.indexOf('-v') !== -1
 ) {
     console.log(pack.version);
-} else if (argv[0]) {
-    getSoundex(argv.join(' ').split(/\s+/g));
+} else if (argv.length) {
+    getSoundex(argv.join(' '));
+} else if (!expextPipeIn) {
+    getSoundex();
 } else {
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
     process.stdin.on('data', function (data) {
-        getSoundex(data.trim().split(/\s+/g));
+        getSoundex(data.trim());
     });
 }
