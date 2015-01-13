@@ -26,18 +26,24 @@ $ component install wooorm/soundex-code
 $ bower install soundex-code
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var soundex = require('wooorm/soundex-code');
+```
+
 ## Usage
 
 ```javascript
-var soundexCode = require('soundex-code');
+var soundex = require('soundex-code');
 
-soundexCode("phonetics"); // "P532"
-soundexCode("Ashcraft"); // "A261"
-soundexCode("Lissajous"); // "L222"
-soundexCode("Smith") === soundex-code("Schmit"); // true
+soundex("phonetics"); // "P532"
+soundex("Ashcraft"); // "A261"
+soundex("Lissajous"); // "L222"
+soundex("Smith") === soundex-code("Schmit"); // true
 
-soundexCode("Ashcraftersson", 6); // "A26136"
-soundexCode("A", 6); // "A000"
+soundex("Ashcraftersson", 6); // "A26136"
+soundex("A", 6); // "A000"
 ```
 
 ## CLI
