@@ -57,7 +57,7 @@ $ npm install --global soundex-code
 Use:
 
 ```text
-Usage: soundex-code [options] words...
+Usage: soundex-code [options] <words...>
 
 Fast Soundex implementation
 
@@ -68,13 +68,13 @@ Options:
 
 Usage:
 
-# output phonetics for words
-$ soundex-code soundex unicorn
-# S532 U526
+# output phonetics
+$ soundex-code phonetics unicorn
+# P532 U526
 
-# output phonetics for words from stdin
-$ echo "soundex unicorn banana" | soundex-code
-# S532 U526 B550
+# output phonetics from stdin
+$ echo "phonetics banana" | soundex-code
+# P532 B550
 ```
 
 ## Benchmark
