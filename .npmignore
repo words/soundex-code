@@ -7,7 +7,6 @@ components/
 coverage/
 node_modules/
 benchmark.js
-cli.js
 test.js
 bower.json
 component.json
