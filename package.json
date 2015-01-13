@@ -28,18 +28,19 @@
     "mocha": "^2.0.0"
   },
   "scripts": {
-    "test": "_mocha --check-leaks test.js",
+    "test-api": "_mocha --check-leaks test.js",
     "test-cli": "bash test.sh",
     "test-coveralls": "istanbul cover _mocha --report lcovonly -- --check-leaks test.js",
+    "test-coverage": "istanbul cover _mocha -- --check-leaks test.js",
     "test-travis": "npm run test-cli && npm run test-coveralls",
-    "coverage": "istanbul cover _mocha -- -- test.js",
+    "test": "npm run test-api && npm run test-cli",
     "lint-api": "eslint index.js",
-    "lint-cli": "eslint --rule no-process-exit:false cli.js",
     "lint-benchmark": "eslint --global suite,set,bench benchmark.js",
+    "lint-cli": "eslint --rule no-process-exit:false cli.js",
     "lint-test": "eslint --env mocha test.js",
     "lint-style": "jscs --reporter inline index.js benchmark.js cli.js test.js",
-    "lint": "npm run lint-api && npm run lint-cli && npm run lint-benchmark && npm run lint-test && npm run lint-style",
-    "make": "npm run lint && npm run coverage",
+    "lint": "npm run lint-api && npm run lint-benchmark && npm run lint-cli && npm run lint-test && npm run lint-style",
+    "make": "npm run lint && npm run test-coverage",
     "install-benchmark": "npm install natural soundex soundex-encode",
     "benchmark": "matcha benchmark.js"
   }
