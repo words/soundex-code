@@ -8,24 +8,27 @@ Depending on your goals, additionally use a stemmer (e.g., my own porter stemmer
 
 ## Installation
 
-npm:
+[npm](https://docs.npmjs.com/cli/install):
+
 ```bash
 $ npm install soundex-code
 ```
 
-Component:
+[Component.js](https://github.com/componentjs/component):
+
 ```bash
 $ component install wooorm/soundex-code
 ```
 
-Bower:
+[Bower](http://bower.io/#install-packages):
+
 ```bash
 $ bower install soundex-code
 ```
 
 ## Usage
 
-```js
+```javascript
 var soundexCode = require('soundex-code');
 
 soundexCode("phonetics"); // "P532"
@@ -40,12 +43,14 @@ soundexCode("A", 6); // "A000"
 ## CLI
 
 Install:
+
 ```bash
 $ npm install --global soundex-code
 ```
 
 Use:
-```
+
+```text
 Usage: soundex-code [options] words...
 
 Fast Soundex implementation
@@ -70,7 +75,7 @@ $ echo "soundex unicorn banana" | soundex-code
 
 On a MacBook Air, it runs about 516,000 op/s.
 
-```
+```text
            soundexCode — this module
   410 op/s » op/s * 1,000
 
