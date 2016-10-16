@@ -1,6 +1,6 @@
 {
   "name": "soundex-code",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Soundex phonetic algorithm",
   "license": "MIT",
   "keywords": [
