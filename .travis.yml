@@ -1,7 +1,6 @@
 language: node_js
 node_js:
 - '4.0'
-- '5.0'
 - '6.0'
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
@@ -12,7 +11,7 @@ deploy:
       secure: PwUWps5tuiPs5sW3yeSZi1GvpPjm0gwJ7qFr7+LRPMvSMjOymI/aoB5BIbB3pjREtTUJjpvRgEy9KVzBqmKenIA9oxQzAd0J16Mz0SBheIPYnLua0Uk2s5H+JbWQaip6uXT96iaCdfpYmJFJHpmkSjKD8yzORA1b5S/qKJiDyH8=
     on:
       tags: true
-      node: '5.0'
+      node: '4.0'
   - provider: releases
     api_key:
       secure: GxY1n58pDNJWyAqq4DINSoj40rttREj4wXEvuIR0xLXdZA+XdchGYYbWniUJ9GBGIxPjopM+BbFujMiRmXQIeQR60ULk3zu720484gEwWucvwpoEExQNQ5/hi83jLnAkno/a7AYku2b7vlImObk6dogxiTkLKho9tuNPR7wKeMs=
@@ -21,4 +20,4 @@ deploy:
       - "soundex-code.min.js"
     on:
       tags: true
-      node: '6.0'
+      node: '7.0'
