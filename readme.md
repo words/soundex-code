@@ -24,7 +24,7 @@ var soundex = require('soundex-code');
 soundex('phonetics'); // 'P532'
 soundex('Ashcraft'); // 'A261'
 soundex('Lissajous'); // 'L222'
-soundex('Smith') === soundex-code('Schmit'); // true
+soundex('Smith') === soundex('Schmit'); // true
 
 soundex('Ashcraftersson', 6); // 'A26136'
 soundex('A', 6); // 'A000'
