@@ -61,6 +61,21 @@ $ echo "phonetics banana" | soundex-code
 P532 B550
 ```
 
+## Related
+
+*   [`metaphone`](https://github.com/wooorm/metaphone)
+    — Metaphone implementation
+*   [`double-metaphone`](https://github.com/wooorm/double-metaphone)
+    — Double Metaphone implementation
+*   [`stemmer`](https://github.com/wooorm/stemmer)
+    — Porter Stemmer algorithm
+*   [`dice-coefficient`](https://github.com/wooorm/dice-coefficient)
+    — Sørensen–Dice coefficient
+*   [`levenshtein-edit-distance`](https://github.com/wooorm/levenshtein-edit-distance)
+    — Levenshtein edit distance
+*   [`syllable`](https://github.com/wooorm/syllable)
+    — Syllable count in an English word
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
