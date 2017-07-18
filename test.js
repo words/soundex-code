@@ -89,7 +89,6 @@ test('api', function (t) {
   t.end();
 });
 
-/* CLI. */
 test('cli', function (t) {
   var input = new PassThrough();
 

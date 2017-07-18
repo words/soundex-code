@@ -1,6 +1,5 @@
 'use strict';
 
-/* Expose. */
 module.exports = soundex;
 
 /* Minimum length of Soundex keys. */
