@@ -82,13 +82,13 @@ P532 B550
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/soundex-code.svg
+[travis-badge]: https://img.shields.io/travis/words/soundex-code.svg
 
-[travis]: https://travis-ci.org/wooorm/soundex-code
+[travis]: https://travis-ci.org/words/soundex-code
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/soundex-code.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/words/soundex-code.svg
 
-[codecov]: https://codecov.io/github/wooorm/soundex-code
+[codecov]: https://codecov.io/github/words/soundex-code
 
 [license]: LICENSE
 
@@ -96,6 +96,6 @@ P532 B550
 
 [wiki]: http://en.wikipedia.org/wiki/Soundex
 
-[metaphone]: https://github.com/wooorm/metaphone
+[metaphone]: https://github.com/words/metaphone
 
-[stemmer]: https://github.com/wooorm/stemmer
+[stemmer]: https://github.com/words/stemmer

@@ -11,8 +11,9 @@
     "cli",
     "bin"
   ],
-  "repository": "https://github.com/wooorm/soundex-code",
-  "bugs": "https://github.com/wooorm/soundex-code/issues",
+  "homepage": "https://words.github.io/soundex-code/",
+  "repository": "words/soundex-code",
+  "bugs": "https://github.com/words/soundex-code/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
@@ -61,6 +62,8 @@
     ]
   },
   "remarkConfig": {
-    "plugins": ["preset-wooorm"]
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
