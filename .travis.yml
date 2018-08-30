@@ -5,20 +5,13 @@ node_js:
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
-  - provider: npm
-    email: tituswormer@gmail.com
-    api_key:
-      secure: PwUWps5tuiPs5sW3yeSZi1GvpPjm0gwJ7qFr7+LRPMvSMjOymI/aoB5BIbB3pjREtTUJjpvRgEy9KVzBqmKenIA9oxQzAd0J16Mz0SBheIPYnLua0Uk2s5H+JbWQaip6uXT96iaCdfpYmJFJHpmkSjKD8yzORA1b5S/qKJiDyH8=
-    on:
-      tags: true
-      node: '4.0'
-  - provider: releases
-    skip_cleanup: true
-    api_key:
-      secure: GxY1n58pDNJWyAqq4DINSoj40rttREj4wXEvuIR0xLXdZA+XdchGYYbWniUJ9GBGIxPjopM+BbFujMiRmXQIeQR60ULk3zu720484gEwWucvwpoEExQNQ5/hi83jLnAkno/a7AYku2b7vlImObk6dogxiTkLKho9tuNPR7wKeMs=
-    file:
-      - "soundex-code.js"
-      - "soundex-code.min.js"
-    on:
-      tags: true
-      node: '9.0'
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: GxY1n58pDNJWyAqq4DINSoj40rttREj4wXEvuIR0xLXdZA+XdchGYYbWniUJ9GBGIxPjopM+BbFujMiRmXQIeQR60ULk3zu720484gEwWucvwpoEExQNQ5/hi83jLnAkno/a7AYku2b7vlImObk6dogxiTkLKho9tuNPR7wKeMs=
+  file:
+    - "soundex-code.js"
+    - "soundex-code.min.js"
+  on:
+    tags: true
+    node: '9.0'
