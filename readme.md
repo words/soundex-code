@@ -90,7 +90,7 @@ P532 B550
 
 [codecov]: https://codecov.io/github/words/soundex-code
 
-[license]: LICENSE
+[license]: license
 
 [author]: http://wooorm.com
 
