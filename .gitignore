@@ -5,3 +5,4 @@ coverage/
 node_modules/
 soundex-code.js
 soundex-code.min.js
+yarn.lock
