@@ -4,7 +4,7 @@ var PassThrough = require('stream').PassThrough;
 var test = require('tape');
 var execa = require('execa');
 var version = require('./package').version;
-var soundex = require('./');
+var soundex = require('.');
 
 test('api', function (t) {
   t.equal(soundex('PHONETICS'), soundex('phonetics'), 'case insensitive');

@@ -2,7 +2,7 @@
 'use strict';
 
 var pack = require('./package.json');
-var soundex = require('./');
+var soundex = require('.');
 
 var argv = process.argv.slice(2);
 
