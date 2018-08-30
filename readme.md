@@ -19,15 +19,15 @@ npm install soundex-code
 Use:
 
 ```js
-var soundex = require('soundex-code');
+var soundex = require('soundex-code')
 
-soundex('phonetics'); // 'P532'
-soundex('Ashcraft'); // 'A261'
-soundex('Lissajous'); // 'L222'
-soundex('Smith') === soundex('Schmit'); // true
+soundex('phonetics') // => 'P532'
+soundex('Ashcraft') // => 'A261'
+soundex('Lissajous') // => 'L222'
+soundex('Smith') === soundex('Schmit') // => true
 
-soundex('Ashcraftersson', 6); // 'A26136'
-soundex('A', 6); // 'A000'
+soundex('Ashcraftersson', 6) // => 'A26136'
+soundex('A', 6) // => 'A000'
 ```
 
 ## CLI
