@@ -92,9 +92,9 @@ P532 B550
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[wiki]: http://en.wikipedia.org/wiki/Soundex
+[wiki]: https://en.wikipedia.org/wiki/Soundex
 
 [metaphone]: https://github.com/words/metaphone
 

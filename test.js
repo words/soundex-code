@@ -47,7 +47,7 @@ test('api', function(t) {
   })
 
   // The PHP implementation, based on Knuths, gives several examples. See:
-  // <http://php.net/manual/en/function.soundex.php>
+  // <https://php.net/manual/en/function.soundex.php>
   t.test('compatible with (Node) Natural', function(st) {
     run(st, {
       Euler: 'E460',
@@ -68,7 +68,7 @@ test('api', function(t) {
   })
 
   // The original implementation gives several examples. See:
-  // <http://www.archives.gov/research/census/soundex.html>
+  // <https://www.archives.gov/research/census/soundex.html>
   t.test('compatible with (Node) Natural', function(st) {
     run(st, {
       Washington: 'W252',
