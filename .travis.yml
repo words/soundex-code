@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
@@ -10,7 +10,7 @@ deploy:
   api_key:
     secure: GxY1n58pDNJWyAqq4DINSoj40rttREj4wXEvuIR0xLXdZA+XdchGYYbWniUJ9GBGIxPjopM+BbFujMiRmXQIeQR60ULk3zu720484gEwWucvwpoEExQNQ5/hi83jLnAkno/a7AYku2b7vlImObk6dogxiTkLKho9tuNPR7wKeMs=
   file:
-    - "soundex-code.js"
-    - "soundex-code.min.js"
+    - 'soundex-code.js'
+    - 'soundex-code.min.js'
   on:
     tags: true
