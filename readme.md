@@ -7,21 +7,20 @@
 
 [Soundex][wiki] phonetic algorithm.
 
-Soundex is one of the earlier phonetics algorithms, specifically
-designed for surnames, inspiring others such as [metaphone][].
+Soundex is one of the earlier phonetics algorithms, specifically designed for
+surnames, inspiring others such as [metaphone][].
 
-Depending on your goals, additionally use a stemmer (such as
-[stemmer][]).
+Depending on your goals, additionally use a stemmer (such as [stemmer][]).
 
-## API
+## Install
 
-Install:
+[npm][]:
 
-```bash
+```sh
 npm install soundex-code
 ```
 
-Use:
+## API
 
 ```js
 var soundex = require('soundex-code')
@@ -36,14 +35,6 @@ soundex('A', 6) // => 'A000'
 ```
 
 ## CLI
-
-Install:
-
-```sh
-npm install -g soundex-code
-```
-
-Use:
 
 ```txt
 Usage: soundex-code [options] <words...>
@@ -102,6 +93,8 @@ P532 B550
 [size-badge]: https://img.shields.io/bundlephobia/minzip/soundex-code.svg
 
 [size]: https://bundlephobia.com/result?p=soundex-code
+
+[npm]: https://www.npmjs.com
 
 [license]: license
 
