@@ -1,4 +1,9 @@
-# soundex-code [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# soundex-code
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 [Soundex][wiki] phonetic algorithm.
 
@@ -82,13 +87,21 @@ P532 B550
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/words/soundex-code.svg
+[build-badge]: https://img.shields.io/travis/words/soundex-code.svg
 
-[travis]: https://travis-ci.org/words/soundex-code
+[build]: https://travis-ci.org/words/soundex-code
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/words/soundex-code.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/words/soundex-code.svg
 
-[codecov]: https://codecov.io/github/words/soundex-code
+[coverage]: https://codecov.io/github/words/soundex-code
+
+[downloads-badge]: https://img.shields.io/npm/dm/soundex-code.svg
+
+[downloads]: https://www.npmjs.com/package/soundex-code
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/soundex-code.svg
+
+[size]: https://bundlephobia.com/result?p=soundex-code
 
 [license]: license
 
