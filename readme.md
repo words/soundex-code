@@ -8,9 +8,10 @@
 [Soundex][wiki] phonetic algorithm.
 
 Soundex is one of the earlier phonetics algorithms, specifically designed for
-surnames, inspiring others such as [metaphone][].
+surnames, inspiring others such as [`metaphone`][metaphone].
 
-Depending on your goals, additionally use a stemmer (such as [stemmer][]).
+Depending on your goals, additionally use a stemmer (such as
+[`stemmer`][stemmer]).
 
 ## Install
 
