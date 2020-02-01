@@ -51,7 +51,7 @@ function soundex(value, maxLength) {
     prev = phonetics
   }
 
-  return pad(results.join('')).substr(0, maxLength || minLength)
+  return pad(results.join('')).slice(0, maxLength || minLength)
 }
 
 // Pad a given value with zero characters. The function only pads four
