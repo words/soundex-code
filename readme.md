@@ -15,6 +15,9 @@ Depending on your goals, additionally use a stemmer (such as
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -23,8 +26,11 @@ npm install soundex-code
 
 ## API
 
+This package exports the following identifiers: `soundex`.
+There is no default export.
+
 ```js
-var soundex = require('soundex-code')
+import {soundex} from 'soundex-code'
 
 soundex('phonetics') // => 'P532'
 soundex('Ashcraft') // => 'A261'

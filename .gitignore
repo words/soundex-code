@@ -1,8 +1,5 @@
 .DS_Store
 *.log
-.nyc_output/
 coverage/
 node_modules/
-soundex-code.js
-soundex-code.min.js
 yarn.lock

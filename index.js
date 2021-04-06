@@ -1,7 +1,3 @@
-'use strict'
-
-module.exports = soundex
-
 // Minimum length of Soundex keys.
 var minLength = 4
 
@@ -19,7 +15,7 @@ map.m = map.n = 5
 map.r = 6
 
 // Get the soundex key from a given value.
-function soundex(value, maxLength) {
+export function soundex(value, maxLength) {
   var results = []
   var index = -1
   var length
