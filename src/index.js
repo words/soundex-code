@@ -1,8 +1,5 @@
-'use strict'
-
 /* eslint-env browser */
-
-var soundex = require('soundex-code')
+import {soundex} from 'soundex-code'
 
 var $input = document.querySelector('input')
 var $output = document.querySelector('output')
