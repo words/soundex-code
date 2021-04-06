@@ -14,20 +14,27 @@ map.l = 4
 map.m = map.n = 5
 map.r = 6
 
-// Get the soundex key from a given value.
+/**
+ * Get the soundex key from a given value.
+ *
+ * @param {string} value
+ * @param {number} [maxLength=4]
+ * @returns {string}
+ */
 export function soundex(value, maxLength) {
+  var lowercase = String(value).toLowerCase()
+  /** @type {Array.<string|number>} */
   var results = []
   var index = -1
-  var length
+  /** @type {string} */
   var character
+  /** @type {number} */
   var previous
+  /** @type {number} */
   var phonetics
 
-  value = String(value).toLowerCase()
-  length = value.length
-
-  while (++index < length) {
-    character = value.charAt(index)
+  while (++index < lowercase.length) {
+    character = lowercase.charAt(index)
     phonetics = map[character]
 
     if (index === 0) {
@@ -50,8 +57,12 @@ export function soundex(value, maxLength) {
   return pad(results.join('')).slice(0, maxLength || minLength)
 }
 
-// Pad a given value with zero characters. The function only pads four
-// characters.
+/**
+ * Pad a given value with zero characters. The function only pads four characters.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
 function pad(value) {
   var length = minLength - value.length
   var index = -1

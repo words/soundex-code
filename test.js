@@ -1,11 +1,13 @@
 import fs from 'fs'
+import {URL} from 'url'
 import {exec} from 'child_process'
 import {PassThrough} from 'stream'
 import test from 'tape'
 import {soundex} from './index.js'
 
+/** @type {Object.<string, unknown>} */
 var pack = JSON.parse(
-  fs.readFileSync(new URL('./package.json', import.meta.url))
+  String(fs.readFileSync(new URL('./package.json', import.meta.url)))
 )
 
 var own = {}.hasOwnProperty
@@ -144,13 +146,18 @@ test('cli', function (t) {
   })
 })
 
+/**
+ * @param {import('tape').Test} t
+ * @param {Object.<string, string>} tests
+ */
 function run(t, tests) {
   var index = 0
+  /** @type {string} */
   var key
 
   for (key in tests) {
     if (own.call(tests, key)) {
-      t.equal(soundex(key), tests[key], ++index)
+      t.equal(soundex(key), tests[key], String(++index))
     }
   }
 }
