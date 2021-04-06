@@ -79,9 +79,9 @@ P532 B550
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/words/soundex-code.svg
+[build-badge]: https://github.com/words/soundex-code/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/words/soundex-code
+[build]: https://github.com/words/soundex-code/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/words/soundex-code.svg
 
