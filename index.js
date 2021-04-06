@@ -24,7 +24,7 @@ function soundex(value, maxLength) {
   var index = -1
   var length
   var character
-  var prev
+  var previous
   var phonetics
 
   value = String(value).toLowerCase()
@@ -37,7 +37,7 @@ function soundex(value, maxLength) {
     if (index === 0) {
       // Initial letter
       results.push(character.toUpperCase())
-    } else if (phonetics && phonetics !== prev) {
+    } else if (phonetics && phonetics !== previous) {
       // Phonetics value
       results.push(phonetics)
     } else if (phonetics === 0) {
@@ -45,10 +45,10 @@ function soundex(value, maxLength) {
       phonetics = null
     } else {
       // Unknown character (including H and W)
-      phonetics = prev
+      phonetics = previous
     }
 
-    prev = phonetics
+    previous = phonetics
   }
 
   return pad(results.join('')).slice(0, maxLength || minLength)

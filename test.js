@@ -6,7 +6,9 @@ var test = require('tape')
 var version = require('./package').version
 var soundex = require('.')
 
-test('api', function(t) {
+var own = {}.hasOwnProperty
+
+test('api', function (t) {
   t.equal(soundex('PHONETICS'), soundex('phonetics'), 'case insensitive')
   t.equal(soundex('PhoNeTicS'), soundex('phonetics'), 'case insensitive (2)')
 
@@ -34,7 +36,7 @@ test('api', function(t) {
 
   // Natural provides several unit tests. See:
   // <https://github.com/NaturalNode/natural>
-  t.test('compatible with (Node) Natural', function(st) {
+  t.test('compatible with (Node) Natural', function (st) {
     run(st, {
       blackberry: 'B421',
       calculate: 'C424',
@@ -48,7 +50,7 @@ test('api', function(t) {
 
   // The PHP implementation, based on Knuths, gives several examples. See:
   // <https://php.net/manual/en/function.soundex.php>
-  t.test('compatible with (Node) Natural', function(st) {
+  t.test('compatible with (Node) Natural', function (st) {
     run(st, {
       Euler: 'E460',
       Gauss: 'G200',
@@ -69,7 +71,7 @@ test('api', function(t) {
 
   // The original implementation gives several examples. See:
   // <https://www.archives.gov/research/census/soundex.html>
-  t.test('compatible with (Node) Natural', function(st) {
+  t.test('compatible with (Node) Natural', function (st) {
     run(st, {
       Washington: 'W252',
       Lee: 'L000',
@@ -88,50 +90,65 @@ test('api', function(t) {
   t.end()
 })
 
-test('cli', function(t) {
+test('cli', function (t) {
   var input = new PassThrough()
-  var helps = ['-h', '--help']
-  var versions = ['-v', '--version']
 
   t.plan(7)
 
-  exec('./cli.js considerations', function(err, stdout, stderr) {
-    t.deepEqual([err, stdout, stderr], [null, 'C523\n', ''], 'one')
+  exec('./cli.js considerations', function (error, stdout, stderr) {
+    t.deepEqual([error, stdout, stderr], [null, 'C523\n', ''], 'one')
   })
 
-  exec('./cli.js detestable vileness', function(err, stdout, stderr) {
-    t.deepEqual([err, stdout, stderr], [null, 'D323 V452\n', ''], 'two')
+  exec('./cli.js detestable vileness', function (error, stdout, stderr) {
+    t.deepEqual([error, stdout, stderr], [null, 'D323 V452\n', ''], 'two')
   })
 
-  var subprocess = exec('./cli.js', function(err, stdout, stderr) {
-    t.deepEqual([err, stdout, stderr], [null, 'D323 V452\n', ''], 'stdin')
+  var subprocess = exec('./cli.js', function (error, stdout, stderr) {
+    t.deepEqual([error, stdout, stderr], [null, 'D323 V452\n', ''], 'stdin')
   })
 
   input.pipe(subprocess.stdin)
   input.write('detestable')
-  setImmediate(function() {
+  setImmediate(function () {
     input.end(' vileness')
   })
 
-  helps.forEach(function(flag) {
-    exec('./cli.js ' + flag, function(err, stdout, stderr) {
-      t.deepEqual(
-        [err, /\sUsage: soundex-code/.test(stdout), stderr],
-        [null, true, ''],
-        flag
-      )
-    })
+  exec('./cli.js -h', function (error, stdout, stderr) {
+    t.deepEqual(
+      [error, /\sUsage: soundex-code/.test(stdout), stderr],
+      [null, true, ''],
+      '-h'
+    )
   })
 
-  versions.forEach(function(flag) {
-    exec('./cli.js ' + flag, function(err, stdout, stderr) {
-      t.deepEqual([err, stdout, stderr], [null, version + '\n', ''], flag)
-    })
+  exec('./cli.js --help', function (error, stdout, stderr) {
+    t.deepEqual(
+      [error, /\sUsage: soundex-code/.test(stdout), stderr],
+      [null, true, ''],
+      '--help'
+    )
+  })
+
+  exec('./cli.js -v', function (error, stdout, stderr) {
+    t.deepEqual([error, stdout, stderr], [null, version + '\n', ''], '-v')
+  })
+
+  exec('./cli.js --version', function (error, stdout, stderr) {
+    t.deepEqual(
+      [error, stdout, stderr],
+      [null, version + '\n', ''],
+      '--version'
+    )
   })
 })
 
 function run(t, tests) {
-  Object.keys(tests).forEach(function(name, i) {
-    t.equal(soundex(name), tests[name], i + 1)
-  })
+  var index = 0
+  var key
+
+  for (key in tests) {
+    if (own.call(tests, key)) {
+      t.equal(soundex(key), tests[key], ++index)
+    }
+  }
 }
