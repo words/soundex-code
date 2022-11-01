@@ -7,11 +7,11 @@ import test from 'tape'
 import {soundex} from './index.js'
 
 /** @type {Record<string, unknown>} */
-var pack = JSON.parse(
+const pack = JSON.parse(
   String(fs.readFileSync(new URL('package.json', import.meta.url)))
 )
 
-var own = {}.hasOwnProperty
+const own = {}.hasOwnProperty
 
 test('api', function (t) {
   t.equal(soundex('PHONETICS'), soundex('phonetics'), 'case insensitive')
@@ -96,7 +96,7 @@ test('api', function (t) {
 })
 
 test('cli', function (t) {
-  var input = new PassThrough()
+  const input = new PassThrough()
 
   t.plan(7)
 
@@ -108,7 +108,7 @@ test('cli', function (t) {
     t.deepEqual([error, stdout, stderr], [null, 'D323 V452\n', ''], 'two')
   })
 
-  var subprocess = exec('./cli.js', function (error, stdout, stderr) {
+  const subprocess = exec('./cli.js', function (error, stdout, stderr) {
     t.deepEqual([error, stdout, stderr], [null, 'D323 V452\n', ''], 'stdin')
   })
 
@@ -153,9 +153,9 @@ test('cli', function (t) {
  * @param {Record<string, string>} tests
  */
 function run(t, tests) {
-  var index = 0
+  let index = 0
   /** @type {string} */
-  var key
+  let key
 
   for (key in tests) {
     if (own.call(tests, key)) {
