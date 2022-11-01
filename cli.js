@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import process from 'node:process'
 import {soundex} from './index.js'
 
-/** @type {Object.<string, unknown>} */
+/** @type {Record<string, unknown>} */
 var pack = JSON.parse(
   String(fs.readFileSync(new URL('package.json', import.meta.url)))
 )

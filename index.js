@@ -4,6 +4,7 @@ var minLength = 4
 // Soundex values belonging to characters.
 // This map also includes vowels (with a value of 0) to easily distinguish
 // between an unknown value or a vowel.
+/** @type {Record<string, number>} */
 var map = {}
 
 map.a = map.e = map.i = map.o = map.u = map.y = 0
@@ -28,9 +29,9 @@ export function soundex(value, maxLength) {
   var index = -1
   /** @type {string} */
   var character
-  /** @type {number} */
+  /** @type {number|undefined} */
   var previous
-  /** @type {number} */
+  /** @type {number|undefined} */
   var phonetics
 
   while (++index < lowercase.length) {
@@ -45,7 +46,7 @@ export function soundex(value, maxLength) {
       results.push(phonetics)
     } else if (phonetics === 0) {
       // Vowel
-      phonetics = null
+      phonetics = undefined
     } else {
       // Unknown character (including H and W)
       phonetics = previous
