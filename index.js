@@ -21,8 +21,12 @@ map.r = 6
  * Get the soundex key from a given value.
  *
  * @param {string} value
+ *   Value to use.
  * @param {number} [maxLength=4]
+ *   Create a code that is at most `maxLength` in size.
+ *   The minimum is always 4 (padded on the right).
  * @returns {string}
+ *   Sounds key for `value`.
  */
 export function soundex(value, maxLength) {
   const lowercase = String(value).toLowerCase()
