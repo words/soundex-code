@@ -7,27 +7,65 @@
 
 [Soundex][wiki] phonetic algorithm.
 
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`soundex(value[, maxLength])`](#soundexvalue-maxlength)
+*   [CLI](#cli)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [Security](#security)
+*   [License](#license)
+
+## What is this?
+
+This package exposes a phonetic algorithm.
+That means it gets a certain string (typically a human name), and turns it into
+a code, which can then be compared to other codes (of other names), to check if
+they are (likely) pronounced the same.
+
+## When should I use this?
+
+You’re probably dealing with natural language, and know you need this, if
+you’re here!
+
 Soundex is one of the earlier phonetics algorithms, specifically designed for
 surnames, inspiring others such as [`metaphone`][metaphone].
+`metaphone` (and [`double-metaphone`][double-metaphone]) are better.
 
-Depending on your goals, additionally use a stemmer (such as
+Depending on your goals, you likely want to additionally use a stemmer (such as
 [`stemmer`][stemmer]).
 
 ## Install
 
-This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
-instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 14.14+, 16.0+), install with [npm][]:
 
 ```sh
 npm install soundex-code
 ```
 
-## API
+In Deno with [`esm.sh`][esmsh]:
 
-This package exports the following identifiers: `soundex`.
-There is no default export.
+```js
+import {soundex} from 'https://esm.sh/soundex-code@2'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {soundex} from 'https://esm.sh/soundex-code@2?bundle'
+</script>
+```
+
+## Use
 
 ```js
 import {soundex} from 'soundex-code'
@@ -40,6 +78,28 @@ soundex('Smith') === soundex('Schmit') // => true
 soundex('Ashcraftersson', 6) // => 'A26136'
 soundex('A', 6) // => 'A000'
 ```
+
+## API
+
+This package exports the identifier `soundex`.
+There is no default export.
+
+### `soundex(value[, maxLength])`
+
+Get the soundex key from a given value.
+
+###### `value`
+
+Value to use (`string`, required).
+
+###### `maxLength`
+
+Create a code that is at most `maxLength` in size (`number`, default: `4`).
+The minimum is always 4 (padded on the right).
+
+##### Returns
+
+Soundex key for `value` (`string`).
 
 ## CLI
 
@@ -64,20 +124,40 @@ $ echo "phonetics banana" | soundex-code
 P532 B550
 ```
 
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 14.14+ and 16.0+.
+It also works in Deno and modern browsers.
+
 ## Related
 
-*   [`metaphone`](https://github.com/words/metaphone)
-    — Metaphone implementation
-*   [`double-metaphone`](https://github.com/words/double-metaphone)
-    — Double Metaphone implementation
-*   [`stemmer`](https://github.com/words/stemmer)
-    — Porter Stemmer algorithm
+*   [`metaphone`][metaphone]
+    — metaphone implementation
+*   [`double-metaphone`][double-metaphone]
+    — double metaphone implementation
+*   [`stemmer`][stemmer]
+    — porter stemmer algorithm
 *   [`dice-coefficient`](https://github.com/words/dice-coefficient)
-    — Sørensen–Dice coefficient
+    — sørensen–dice coefficient
 *   [`levenshtein-edit-distance`](https://github.com/words/levenshtein-edit-distance)
-    — Levenshtein edit distance
+    — levenshtein edit distance
 *   [`syllable`](https://github.com/words/syllable)
-    — Syllable count in an English word
+    — syllable count in an English word
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
+
+## Security
+
+This package is safe.
 
 ## License
 
@@ -103,6 +183,14 @@ P532 B550
 
 [npm]: https://www.npmjs.com
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
+
 [license]: license
 
 [author]: https://wooorm.com
@@ -110,5 +198,7 @@ P532 B550
 [wiki]: https://en.wikipedia.org/wiki/Soundex
 
 [metaphone]: https://github.com/words/metaphone
+
+[double-metaphone]: https://github.com/words/double-metaphone
 
 [stemmer]: https://github.com/words/stemmer
